@@ -19,3 +19,7 @@ import React from 'react';
 ## Components
 
 - Component is a Function or Class that produces HTML to show the user(JSX) and handles feedback from the user(using event handlers)
+
+## JSX
+- Dialect of JS used in React
+- Browsers don't understand JSX code, run code through babel to turn into normal JS
