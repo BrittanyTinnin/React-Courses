@@ -4,3 +4,10 @@
 3. Create a new file to house this new component - it should have the same name as the component
 4. Create a new component in the new file, paste the JSX into it
 5. Make the new componenet configurable by using React's 'props' system
+
+## Props
+- System for passing data from a parent component to a child component
+- Goal is to customize or configure a child component
+- unidirectional
+- props stands for properties
+- ex: <CommentDetail author="Sam" />, author is name of prop, Sam is value of prop
