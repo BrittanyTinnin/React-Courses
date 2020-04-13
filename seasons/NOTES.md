@@ -16,12 +16,16 @@
 
 ## Component Lifecycle
 
-- constructor
-- render
+- constructor: Good place to do one-time setup; state initialization; no data-loading here
+- render: Avoid doing anything besides returning JSX
   ** Content visible on screen **
-- componentDidMount
+- componentDidMount: Good place to do initial data loading!
   ** Sit and wait for updates **
 - render
-- componentDidUpdate
+- componentDidUpdate: Good place to do more data-loading when state/props change
   ** Sit and wait until this component is not longer shown **
-- componentWillUnmount
+- componentWillUnmount: Good place to do cleanup (especially for non-React stuff)
+- 3 other methods(infrequently used)
+  - shouldComponentUpdate
+  - getDerivedStateFromProps
+  - getSnapshotBeforeUpdate

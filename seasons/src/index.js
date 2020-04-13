@@ -2,31 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props); //super calls the constructor function inside React.Component, calls parent constructor
-    //initialize state here
+  // constructor(props) {
+  //   super(props); //super calls the constructor function inside React.Component, calls parent constructor
+  //   //initialize state here
 
-    // THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT
-    this.state = { lat: null, errorMessage: "" };
+  //   // THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT to this.state
+  //   this.state = { lat: null, errorMessage: "" }; //1 way to initialize state
+  // }
+
+  state = { lat: null, errorMessage: "" }; //equivalent to creating a constructor and setting state
+
+  componentDidMount() {
+    console.log("My component was rendered to the screen");
     window.navigator.geolocation.getCurrentPosition(
-      (position) => {
-        //we called setState to update state object
-        console.log(position);
-        this.setState({ lat: position.coords.latitude });
-      },
-      (err) => {
-        this.setState({ errorMessage: err.message });
-        //not required to update every property of state
-      }
+      (position) => this.setState({ lat: position.coords.latitude }),
+      (err) => this.setState({ errorMessage: err.message })
     );
-  }
-
-  componentDidMount(){
-    console.log('My component was rendered to the screen');
-  }
-
-  componentDidUpdate(){
-    console.log('My component was just updated - it rerendered!');
   }
 
   render() {
