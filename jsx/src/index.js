@@ -4,13 +4,15 @@ import ReactDOM from "react-dom";
 
 // Create a react component
 const App = function () {
+  const buttonText = {text:'Click Me!'};
+
   return (
     <div>
-      <label class="label" for="name">
+      <label className="label" htmlFor="name">
         Enter name:
       </label>
       <input id="name" type="text" />
-      <button style="background-color: blue; color: white;">Submit</button>
+      <button style={{backgroundColor: 'blue', color: 'white'}}>{buttonText.text}</button>
     </div>
   );
 };
@@ -20,8 +22,6 @@ const App = function () {
 // };
 
 // Take the react component and show it on the screen
-ReactDOM.render(
-  <App />,
-  document.getElementById("root")
-  // document.querySelector('root')
-);
+ReactDOM.render(<App />, document.querySelector('#root'));
+
+// document.getElementById("root")
