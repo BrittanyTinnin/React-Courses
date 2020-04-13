@@ -7,18 +7,26 @@ class App extends React.Component {
     //initialize state here
 
     // THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT
-    this.state = { lat: null };
+    this.state = { lat: null, errorMessage: "" };
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         //we called setState to update state object
         console.log(position);
-        this.setState({ lat: position.coords.latitude, errorMessage: "" });
+        this.setState({ lat: position.coords.latitude });
       },
       (err) => {
         this.setState({ errorMessage: err.message });
         //not required to update every property of state
       }
     );
+  }
+
+  componentDidMount(){
+    console.log('My component was rendered to the screen');
+  }
+
+  componentDidUpdate(){
+    console.log('My component was just updated - it rerendered!');
   }
 
   render() {
