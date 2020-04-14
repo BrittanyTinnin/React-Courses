@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import SeasonDisplay from "./SeasonDisplay";
+
 class App extends React.Component {
   // constructor(props) {
   //   super(props); //super calls the constructor function inside React.Component, calls parent constructor
-  //   //initialize state here
+  //initialize state here
 
-  //   // THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT to this.state
+  // THIS IS THE ONLY TIME WE DO DIRECT ASSIGNMENT to this.state
   //   this.state = { lat: null, errorMessage: "" }; //1 way to initialize state
   // }
 
@@ -26,10 +28,10 @@ class App extends React.Component {
     }
 
     if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat}</div>;
+      return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <div>Loading!</div>;
+    return <div><i className="spinner loading icon"></i></div>;
   }
 }
 
