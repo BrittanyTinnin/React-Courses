@@ -29,3 +29,6 @@
   - shouldComponentUpdate
   - getDerivedStateFromProps
   - getSnapshotBeforeUpdate
+
+## Other
+- always setup defaultProps
