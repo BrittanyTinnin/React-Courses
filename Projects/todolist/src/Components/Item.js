@@ -1,5 +1,7 @@
 import React from "react";
 
-const Item = () => {
-  return <div>Item!</div>;
+const Item = (props) => {
+return <div>{props.item}</div>;
 };
+
+export default Item;
