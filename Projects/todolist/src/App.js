@@ -7,6 +7,7 @@ class App extends React.PureComponent {
 
     this.state = {
       items: ["bacon", "honey", "sugar"],
+      term: "",
     };
   }
 
@@ -14,6 +15,9 @@ class App extends React.PureComponent {
     return (
       <div>
         <ItemList items={this.state.items} />
+        <form>
+          <input type="text" placeholder="new item" value={this.state.term} />
+        </form>
       </div>
     );
   }
