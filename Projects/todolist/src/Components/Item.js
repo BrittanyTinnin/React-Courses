@@ -1,7 +1,11 @@
-import React from "react";
+import React, { PureComponent } from "react";
 
 const Item = (props) => {
-return <div>{props.item}</div>;
+  return (
+    <div>
+      <label>{props.item}</label>
+    </div>
+  );
 };
 
 export default Item;
