@@ -11,6 +11,10 @@ class App extends PureComponent {
     };
   }
 
+  onDelete = (event) => {
+    event.preventDefault();
+  };
+
   onInputChange = (event) => {
     this.setState({ term: event.target.value });
     console.log(this.state.term);

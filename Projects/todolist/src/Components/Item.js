@@ -3,7 +3,9 @@ import React, { PureComponent } from "react";
 const Item = (props) => {
   return (
     <div>
-      <label>{props.item}</label>
+      <div>
+        {props.item} <button>Done?</button>
+      </div>
     </div>
   );
 };
