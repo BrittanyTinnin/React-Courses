@@ -29,7 +29,6 @@ class App extends PureComponent {
   render() {
     return (
       <div>
-        <ItemList items={this.state.items} />
         <form onSubmit={this.onFormSubmit}>
           <input
             type="text"
@@ -38,6 +37,7 @@ class App extends PureComponent {
             onChange={this.onInputChange}
           />
         </form>
+        <ItemList items={this.state.items} />
       </div>
     );
   }
