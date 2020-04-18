@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 // Reducers
 const songsReducer = () => {
   return [
@@ -7,3 +9,7 @@ const songsReducer = () => {
     { title: "I Want it That Way", duration: "1:45" },
   ];
 };
+
+export default combineReducers({
+  songs: songsReducer,
+});
