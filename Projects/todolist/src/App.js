@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import ItemList from "./Components/ItemList";
+import TodoForm from "./Components/TodoForm";
 
 class App extends PureComponent {
   constructor(props) {
@@ -28,16 +29,17 @@ class App extends PureComponent {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onFormSubmit}>
-          <input
-            type="text"
-            placeholder="new item"
-            value={this.state.term}
-            onChange={this.onInputChange}
-          />
-        </form>
-        <ItemList items={this.state.items} />
+      <div className="ui container grid">
+        <div className="ui row">
+          <div className="column eight wide">
+            <TodoForm
+              onFormSubmit={this.onFormSubmit}
+              onInputChange={this.onInputChange}
+              term={this.state.term}
+            />
+            <ItemList items={this.state.items} />
+          </div>
+        </div>
       </div>
     );
   }
