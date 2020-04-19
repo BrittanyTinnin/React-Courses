@@ -27,3 +27,19 @@
   - /components
   - /reducers
   - index.js
+
+## Actions
+
+- In Redux, action creators simply return an action
+- actions only describe what happened, but don't describe how the application's state changes
+- when you know what your state object looks like, then you write the reducers for it
+
+## Reducers
+
+- reducers specify how the application's state changes in response to actions sent to the store
+- the reducer is a pure function that takes the previous state and an action, and returns the next state (function nameofReducer(previousState, action) => nextState)
+- NEVER DO INSIDE A REDUCER:
+  - Mutate its arguments;
+  - Perform side effects like API calls and routing transitions;
+  - Call non-pure functions, e.g. Date.now() or Math.random().
+- reducer must be pure: Given the same arguments, it should calculate the next state and return it. No surprises. No side effects. No API calls. No mutations. Just a calculation.

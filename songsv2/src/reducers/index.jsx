@@ -10,6 +10,11 @@ const songsReducer = () => {
   ];
 };
 
+const selectedSongReducer = () => {
+  return {};
+};
+
 export default combineReducers({
   songs: songsReducer,
+  selectedSong: selectedSongReducer,
 });

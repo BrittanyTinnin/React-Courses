@@ -6,3 +6,5 @@ export const selectSong = (song) => {
     payload: song,
   };
 };
+
+// In Redux, action creators simply return an action
