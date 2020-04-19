@@ -5,7 +5,7 @@
 - Action Creator -> Action -> dispatch -> Reducers -> State
 - To change state of our app, we call an .. Action Creator -> produces an Action -> gets fed to Dispatch -> forwards the action to Reducers -> creates new State -> wait until we need to update state again
 
-## ...with Asychronous Requests
+## ...with Asychronous Actions
 
 - Action Creator -> Action -> dispatch -> Middleware(only for async requests) -> Reducers -> State
 - To change state of our app, we call an .. Action Creator -> produces an Action -> gets fed to Dispatch -> forwards the action to Middleware -> sends action to Reducers -> creates new State -> wait until we need to update state again
@@ -64,3 +64,11 @@
 - Some reducer sees the action, returns the data off the 'payload'
 - Because we generated some new state object, redux/react-redux cause our React-app to be rerendered
   ** we get fetched data into a component by generating new state in our redux store, then getting that into our component through mapStateToProps **
+
+## Middleware in Redux
+
+- Function that gets called with every action we dispatch
+- Has the ability to STOP, MODIFY, or otherwise mess around with actions
+- Tons of open source middleware exist
+- Most popular use of middleware is for dealing with async actions
+- we are going to use a middleware called 'Redux-Thunk' to solve our async issues
