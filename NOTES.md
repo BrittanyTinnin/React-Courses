@@ -3,7 +3,12 @@
 ### Redux Cycle
 
 - Action Creator -> Action -> dispatch -> Reducers -> State
-- To change state of our app, we call an .. Action Creator -> produces an Action -> get fed to Dispatch -> forwards the action to Reducers -> creates new State -> wait until we need to update state again
+- To change state of our app, we call an .. Action Creator -> produces an Action -> gets fed to Dispatch -> forwards the action to Reducers -> creates new State -> wait until we need to update state again
+
+## ...with Asychronous Requests
+
+- Action Creator -> Action -> dispatch -> Middleware(only for async requests) -> Reducers -> State
+- To change state of our app, we call an .. Action Creator -> produces an Action -> gets fed to Dispatch -> forwards the action to Middleware -> sends action to Reducers -> creates new State -> wait until we need to update state again
 
 ## Libraries need to use Redux
 
@@ -49,8 +54,13 @@
 - component gets rendered onto the screen
 - components 'componentDidMount' lifecycle method gets called, has to be called inside a class component
 - we call action creator from 'componentDidMount'
-- Action creator runs code to make an API request
-- API responds with data
-- Action creator return an 'action' with the fetched data on the 'payload' property
+  ** Components are generally responsible for fetching data they need by calling an action creator, usually inside a lifecycle method **
+
+* Action creator runs code to make an API request
+* API responds with data
+* Action creator return an 'action' with the fetched data on the 'payload' property
+  ** Action creators are responsible for making API requests, this is where Redux-Thunk comes into play **
+
 - Some reducer sees the action, returns the data off the 'payload'
 - Because we generated some new state object, redux/react-redux cause our React-app to be rerendered
+  ** we get fetched data into a component by generating new state in our redux store, then getting that into our component through mapStateToProps **
