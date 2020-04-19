@@ -43,3 +43,14 @@
   - Perform side effects like API calls and routing transitions;
   - Call non-pure functions, e.g. Date.now() or Math.random().
 - reducer must be pure: Given the same arguments, it should calculate the next state and return it. No surprises. No side effects. No API calls. No mutations. Just a calculation.
+
+## General Data Loading with Redux
+
+- component gets rendered onto the screen
+- components 'componentDidMount' lifecycle method gets called, has to be called inside a class component
+- we call action creator from 'componentDidMount'
+- Action creator runs code to make an API request
+- API responds with data
+- Action creator return an 'action' with the fetched data on the 'payload' property
+- Some reducer sees the action, returns the data off the 'payload'
+- Because we generated some new state object, redux/react-redux cause our React-app to be rerendered
