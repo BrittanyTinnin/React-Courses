@@ -48,6 +48,10 @@
   - Perform side effects like API calls and routing transitions;
   - Call non-pure functions, e.g. Date.now() or Math.random().
 - reducer must be pure: Given the same arguments, it should calculate the next state and return it. No surprises. No side effects. No API calls. No mutations. Just a calculation.
+- must return any value besides 'undefined'
+- produces 'state' or data to be used inside of your app using only previous state and the action (reducers are pure)
+- must not return reach 'out of its own function' to decide what value to return
+- must not mutate its input 'state' argument
 
 ## General Data Loading with Redux
 
@@ -56,10 +60,14 @@
 - we call action creator from 'componentDidMount'
   ** Components are generally responsible for fetching data they need by calling an action creator, usually inside a lifecycle method **
 
-* Action creator runs code to make an API request
-* API responds with data
-* Action creator return an 'action' with the fetched data on the 'payload' property
+---
+
+- Action creator runs code to make an API request
+- API responds with data
+- Action creator return an 'action' with the fetched data on the 'payload' property
   ** Action creators are responsible for making API requests, this is where Redux-Thunk comes into play **
+
+---
 
 - Some reducer sees the action, returns the data off the 'payload'
 - Because we generated some new state object, redux/react-redux cause our React-app to be rerendered
@@ -77,3 +85,14 @@
 
 - Action Creators can return action objects(must have a type) or can return functions(and functions will get called automatically)
 - manually dispatch an action, after waiting for a response from api request
+
+## How to remove, add, replace element in an array for state
+
+- filter
+- ...
+- map
+
+## How to update, add, remove property in an object for state
+
+- ...
+- \_.omit(state, 'aga') <- lodash syntax

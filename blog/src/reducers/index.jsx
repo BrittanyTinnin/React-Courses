@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
+import postsReducer from "./postsReducer";
 
 export default combineReducers({
-  dummy: () => "hi there", //no purpose just tricking redux so app will work until setup is complete
+  posts: postsReducer,
 });
