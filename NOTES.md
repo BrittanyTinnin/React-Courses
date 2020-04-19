@@ -72,3 +72,8 @@
 - Tons of open source middleware exist
 - Most popular use of middleware is for dealing with async actions
 - we are going to use a middleware called 'Redux-Thunk' to solve our async issues
+
+## Redux-Thunk
+
+- Action Creators can return action objects(must have a type) or can return functions(and functions will get called automatically)
+- manually dispatch an action, after waiting for a response from api request
