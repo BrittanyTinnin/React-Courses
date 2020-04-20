@@ -96,3 +96,10 @@
 
 - ...
 - \_.omit(state, 'aga') <- lodash syntax
+
+## Blog version 1 wrap-up
+
+- imported reduce thunk, and used it
+- redux-thunk, changed the rules of our action creators.. our action creators could now return objects or functions or both
+- make API requests, always make use of middleware(Redux-Thunk)
+- a function returns a function syntax
