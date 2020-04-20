@@ -1,11 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchPosts } from "../actions";
+import { fetchPostsAndUsers } from "../actions";
 import UserHeader from "./UserHeader";
 
 class PostList extends React.PureComponent {
   componentDidMount() {
-    this.props.fetchPosts(); //calls action creator
+    this.props.fetchPostsAndUsers(); //calls action creator
   }
 
   renderList() {
@@ -35,4 +35,6 @@ const mapStateToProps = (state) => {
   return { posts: state.posts };
 };
 
-export default connect(mapStateToProps, { fetchPosts: fetchPosts })(PostList); //arguments of connect method -> mapStateToProps, mapDispatchToProps or object for action creators -> passing an object instead of a function means connect with automatically call bindActionCreators for you internally
+export default connect(mapStateToProps, {
+  fetchPostsAndUsers: fetchPostsAndUsers,
+})(PostList); //arguments of connect method -> mapStateToProps, mapDispatchToProps or object for action creators -> passing an object instead of a function means connect with automatically call bindActionCreators for you internally

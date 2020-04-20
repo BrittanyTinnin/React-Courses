@@ -1,4 +1,15 @@
+import _ from "lodash";
 import jsonPlaceholder from "../apis/jsonplaceholder";
+
+export const fetchPostsAndUsers = () => {
+  return async (dispatch, getState) => {
+    await dispatch(fetchPosts());
+    const userIds = _.uniq(_.map(getState().posts, "userId")); //maps through all posts and only pulss the userId
+    userIds.forEach((id) => dispatch(fetchUser(id)));
+  };
+};
+
+// when calling an action creator inside of an action creator, we need to make sure we dispatch the result of calling the action creator
 
 // Action Creator
 
@@ -25,3 +36,15 @@ export const fetchUser = (id) => {
     dispatch({ type: "FETCH_USER", payload: response.data });
   };
 };
+
+//using lodash -> _.memoize
+// export const fetchUser = (id) => {
+//   return (dispatch) => {
+//     _fetchUser(id, dispatch);
+//   };
+// };
+
+// const _fetchUser = _.memoize(async (id, dispatch) => {
+//   const response = await jsonPlaceholder.get(`/users/${id}`);
+//   dispatch({ type: "FETCH_USER", payload: response.data });
+// });
