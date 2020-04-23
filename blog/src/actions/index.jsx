@@ -14,10 +14,10 @@ export const fetchPostsAndUsers = () => {
 // Action Creator
 
 export const fetchPosts = () => {
-  //defined a function that's going to return a function
+  //defined a function that's going to return a function and use redux-thunk middleware for the network response
   return async (dispatch) => {
     const response = await jsonPlaceholder.get("/posts");
-    dispatch({ type: "FETCH_POSTS", payload: response.data }); //dispatch function initiate changes to data the on redux side of app
+    dispatch({ type: "FETCH_POSTS", payload: response.data }); //dispatch function initiate changes to data on the redux side of app
 
     // action creator returns a function, redux-thunk sees that its a function, and invokes function with dispatch argument. once the function is done, we call dispatch manually to dispatch an action, if it returns an object then its dispatched to reducers
   };

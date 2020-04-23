@@ -1,12 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 
 class PostList extends React.Component {
+  componentDidMount() {}
+
   render() {
     return <div>PostList!</div>;
   }
 }
 
-export default PostList;
+export default connect()(PostList);
 
 // STEPS:
 // 1. show a list of posts in the PostList Component
