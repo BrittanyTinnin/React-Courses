@@ -1,17 +1,34 @@
 import React from "react";
 import { connect } from "react-redux";
+import { fetchPosts } from "../actions";
 
 class PostList extends React.Component {
   componentDidMount() {
-    console.log(this.props);
+    this.props.fetchPosts();
+  }
+
+  renderedList() {
+    return this.props.posts.map((post) => {
+      return (
+        <div>
+          <h4>Post Title: {post.title}</h4>
+          <p>Post Body: {post.body}</p>
+          <p>Author</p>
+        </div>
+      );
+    });
   }
 
   render() {
-    return <div>PostList!</div>;
+    return <div>{this.renderedList()}</div>;
   }
 }
 
-export default connect()(PostList);
+const mapStateToProps = (state) => {
+  return { posts: state.posts };
+};
+
+export default connect(mapStateToProps, { fetchPosts: fetchPosts })(PostList);
 
 // STEPS:
 // 1. show a list of posts in the PostList Component

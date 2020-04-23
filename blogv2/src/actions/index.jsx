@@ -1,10 +1,11 @@
-import jsonplaceholder from "../apis/jsonplaceholder";
+import jsonPlaceHolder from "../apis/jsonPlaceHolder";
 // must use redux-thunk middleware in action creators to make network requests. this middleware allows an action creator to return a function, not just an object. this makes the action creator a thunk.
 // when an action creator returns a function, that function will get executed by the Redux thunk middleware
 
-export function fetchPosts() {
-  return () => {
-    const response = jsonplaceholder.get("/posts");
-    console.log(response.data);
+export const fetchPosts = () => {
+  return async (dispatch) => {
+    console.log("inside action creator fetchPosts");
+    const response = await jsonPlaceHolder.get("/posts");
+    dispatch({ type: "FETCH_POSTS", payload: response.data });
   };
-}
+};
