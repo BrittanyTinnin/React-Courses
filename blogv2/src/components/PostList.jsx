@@ -18,7 +18,7 @@ class PostList extends React.Component {
             <div className="description">
               <p>{post.body}</p>
             </div>
-            <UserHeader />
+            <UserHeader userId={post.userId} />
           </div>
         </div>
       );
@@ -26,7 +26,9 @@ class PostList extends React.Component {
   }
 
   render() {
-    return <div className="ui very relaxed list">{this.renderedList()}</div>;
+    return (
+      <div className="ui very relaxed divided list">{this.renderedList()}</div>
+    );
   }
 }
 

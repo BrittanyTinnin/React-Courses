@@ -4,7 +4,7 @@ import jsonPlaceholder from "../apis/jsonplaceholder";
 export const fetchPostsAndUsers = () => {
   return async (dispatch, getState) => {
     await dispatch(fetchPosts());
-    const userIds = _.uniq(_.map(getState().posts, "userId")); //maps through all posts and only pulss the userId
+    const userIds = _.uniq(_.map(getState().posts, "userId")); //maps through all posts and only pulls the userId
     userIds.forEach((id) => dispatch(fetchUser(id)));
   };
 };
