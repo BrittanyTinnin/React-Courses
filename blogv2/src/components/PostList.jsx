@@ -2,7 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 
 class PostList extends React.Component {
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.props);
+  }
 
   render() {
     return <div>PostList!</div>;
