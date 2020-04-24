@@ -17,3 +17,11 @@
 - Generate an OAuth Client ID
 - Install Google's API library, initialize it with the OAuth Client ID
 - Make sure the lib gets called any time the user clicks on the 'Login with Google' button
+
+## Auth
+
+- Get a reference to the 'auth' object after it isinitialized
+- Figure out if the user is currently signed in
+- print their authentication status on the screen
+
+## Implementing Sign In while managing state with Redux
