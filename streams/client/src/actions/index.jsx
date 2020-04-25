@@ -21,7 +21,6 @@ export const fetchStreams = () => {
   return async (dispatch) => {
     const response = await streams.get("/streams");
     dispatch({ type: FETCH_STREAMS, payload: response.data });
-    console.log("inside action creator fetchStreams");
   };
 };
 
