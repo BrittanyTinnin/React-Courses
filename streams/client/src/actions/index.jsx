@@ -20,15 +20,15 @@ export const signOut = () => {
 export const fetchStreams = () => {
   return async (dispatch) => {
     const response = await streams.get("/streams");
-
-    dispatch({ type: FETCH_STREAMS, action: response.data });
+    dispatch({ type: FETCH_STREAMS, payload: response.data });
+    console.log("inside action creator fetchStreams");
   };
 };
 
 export const fetchStream = (id) => {
   return async (dispatch) => {
     const response = await streams.get(`/streams/${id}`);
-    dispatch({ type: FETCH_STREAM, action: response.data });
+    dispatch({ type: FETCH_STREAM, payload: response.data });
   };
 };
 
@@ -36,14 +36,14 @@ export const createStream = (formValues) => {
   return async (dispatch) => {
     const response = await streams.post("/streams", formValues);
 
-    dispatch({ type: CREATE_STREAM, action: response.data });
+    dispatch({ type: CREATE_STREAM, payload: response.data });
   };
 };
 
 export const editRecord = (id, formValues) => {
   return async (dispatch) => {
     const response = await streams.put(`/streams/${id}`, formValues);
-    dispatch({ type: EDIT_STREAM, action: response.data });
+    dispatch({ type: EDIT_STREAM, payload: response.data });
   };
 };
 

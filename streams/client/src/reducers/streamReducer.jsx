@@ -23,8 +23,9 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_STREAMS:
-      console.log(action);
-      return;
+      let newObject = {};
+      action.payload.forEach((stream) => (newObject[stream.id] = stream));
+      return { ...state, ...newObject };
     case FETCH_STREAM:
       return { ...state, [action.payload.id]: action.payload };
     case CREATE_STREAM:
