@@ -9,6 +9,24 @@
       "title": "Other Stream",
       "description": "Here's some stream",
       "id": 2
+    },
+    {
+      "title": "I created this stream from website",
+      "description": "this was made by me",
+      "userId": "115084440989757875579",
+      "id": 3
+    },
+    {
+      "title": "testing out edit and delete",
+      "description": "i should show up under cptcubbie",
+      "userId": "102411266984963252153",
+      "id": 4
+    },
+    {
+      "title": "created stream with the create button",
+      "description": "used the create button",
+      "userId": "102411266984963252153",
+      "id": 5
     }
   ]
 }
