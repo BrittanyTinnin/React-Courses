@@ -39,7 +39,7 @@ export const createStream = (formValues) => {
 
     dispatch({ type: CREATE_STREAM, payload: response.data });
     // Do some programmatic navigation to get the user back to the root route
-    history.push("/");
+    history.push("/"); //redirects to home page
   };
 };
 
