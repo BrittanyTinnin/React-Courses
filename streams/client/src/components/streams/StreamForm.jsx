@@ -1,7 +1,5 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-import { connect } from "react-redux";
-import { createStream } from "../../actions";
 
 class StreamForm extends React.Component {
   renderError = (formProps) => {
@@ -32,8 +30,7 @@ class StreamForm extends React.Component {
   };
 
   onSubmit = (formValues) => {
-    console.log(formValues);
-    this.props.createStream(formValues);
+    this.props.onSubmit(formValues);
   };
 
   render() {
@@ -68,11 +65,9 @@ const validate = (formValue) => {
   return errors;
 };
 
-const formWrapped = reduxForm({
-  form: "streamCreate",
+export default reduxForm({
+  form: "streamForm",
   validate: validate,
 })(StreamForm);
-
-export default connect(null, { createStream })(formWrapped);
 
 //Field component doesn't render anything. its there to hook up the infastructure of reduxForm
