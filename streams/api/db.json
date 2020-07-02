@@ -17,33 +17,15 @@
       "id": 3
     },
     {
-      "title": "testing out edit and delete",
-      "description": "i should show up under cptcubbie",
-      "userId": "102411266984963252153",
-      "id": 4
-    },
-    {
-      "title": "created stream with the create button",
-      "description": "used the create button",
-      "userId": "102411266984963252153",
-      "id": 5
-    },
-    {
       "title": "Changed In Edit Form",
       "description": "made alot of code changes, hopes this works lol",
       "id": 6
     },
     {
-      "title": "Programmtic Navigation",
-      "description": "changed in edit, using patch http method",
+      "title": "sghstdjydsrheytw",
+      "description": "eurstdkyfudtjyruy",
       "userId": "102411266984963252153",
       "id": 7
-    },
-    {
-      "title": "after refactoring createStream",
-      "description": "component reuse",
-      "userId": "102411266984963252153",
-      "id": 8
     }
   ]
 }
