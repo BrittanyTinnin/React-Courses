@@ -34,12 +34,7 @@ export default (state = {}, action) => {
       console.log(action.payload.id);
       return { ...state, [action.payload.id]: action.payload };
     case DELETE_STREAM:
-      // return { ...state, [action.payload.id]: action.payload };
-      return {
-        state: Object.keys(state).filter(
-          (stream) => stream.id !== action.payload
-        ),
-      };
+      return { ...state, [action.payload.id]: action.payload };
     default:
       return state;
   }
