@@ -34,19 +34,10 @@ export default (state = {}, action) => {
     case EDIT_STREAM:
       return { ...state, [action.payload.id]: action.payload };
     case DELETE_STREAM:
-      // console.log("state-keys: " + Object.keys(state));
-      // console.log("action.payload: " + action.payload);
-      // let obj = Object.assign({}, state);
-      // { ...state, items: state.items.filter(i => i.id !== action.payload.id };
-      // const doSomething = (obj, prop) => {
-      //   let res = Object.assign({}, obj)
-      //   delete res[prop]
-      //   return res
-      // }
-      // delete obj[action.payload];
-      // return { ...state, obj };
-      return { ...state, [action.payload.id]: action.payload };
-
+      return Object.keys(state).reduce((newState, key) => {
+        if (key !== action.payload) newState[key] = state[key];
+        return newState;
+      }, {});
     default:
       return state;
   }

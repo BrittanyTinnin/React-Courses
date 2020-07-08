@@ -16,7 +16,7 @@ const App = () => {
         <div>
           <Header />
           <Switch>
-            {/* shows only the specified route */}
+            {/* Switch shows only the specified route */}
             <Route path="/" exact component={StreamList} />
             <Route path="/streams/new" component={StreamCreate} />
             <Route path="/streams/edit/:id" component={StreamEdit} />
