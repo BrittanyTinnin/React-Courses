@@ -4,10 +4,14 @@ import ListCoursesComponent from "./ListCoursesComponent";
 class InstructorApp extends Component {
   render() {
     return (
-      <React.Fragment>
-        <h1>Instructor Application</h1>
-        <ListCoursesComponent />
-      </React.Fragment>
+      <Router>
+        <React.Fragment>
+          <h1>Instructor Application</h1>
+          <Switch>
+            <ListCoursesComponent />
+          </Switch>
+        </React.Fragment>
+      </Router>
     );
   }
 }
