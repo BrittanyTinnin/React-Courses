@@ -23,7 +23,6 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_STREAMS:
-      console.log("in reducer, state-keys: " + Object.keys(state));
       let newObject = {};
       action.payload.forEach((stream) => (newObject[stream.id] = stream));
       return { ...state, ...newObject };
