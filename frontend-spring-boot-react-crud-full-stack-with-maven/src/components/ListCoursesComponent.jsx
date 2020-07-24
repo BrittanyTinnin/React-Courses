@@ -22,6 +22,11 @@ class ListCoursesComponent extends Component {
       });
   };
 
+  updateCourseClicked = (id) => {
+    console.log("update " + id);
+    this.props.history.push(`/courses/${id}`);
+  };
+
   deleteCourseClicked = (id) => {
     CourseDataService.deleteCourse(CourseDataService.INSTRUCTOR, id).then(
       (response) => {
@@ -30,6 +35,10 @@ class ListCoursesComponent extends Component {
         this.refreshCourses();
       }
     );
+  };
+
+  addCourseClicked = () => {
+    this.props.history.push(`/courses/-1`);
   };
 
   render() {
@@ -46,6 +55,7 @@ class ListCoursesComponent extends Component {
               <tr>
                 <th>Id</th>
                 <th>Description</th>
+                <th>Update</th>
                 <th>Delete</th>
               </tr>
             </thead>
@@ -54,6 +64,16 @@ class ListCoursesComponent extends Component {
                 <tr key={course.id}>
                   <td>{course.id}</td>
                   <td>{course.description}</td>
+                  <td>
+                    <button
+                      className="btn btn-success"
+                      onClick={() => {
+                        this.updateCourseClicked(course.id);
+                      }}
+                    >
+                      Update
+                    </button>
+                  </td>
                   <td>
                     <button
                       className="btn btn-warning"
@@ -66,6 +86,11 @@ class ListCoursesComponent extends Component {
               ))}
             </tbody>
           </table>
+        </div>
+        <div className="row">
+          <button className="btn btn-success" onClick={this.addCourseClicked}>
+            Add
+          </button>
         </div>
       </div>
     );
